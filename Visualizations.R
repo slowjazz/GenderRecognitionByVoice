@@ -43,5 +43,10 @@ featurePlot(
   auto.key = list(column=2)
 )
 
+png('imgs/Density_2.png', width = 1080, height = 720,res = 125)
+voice %>% ggplot(aes(x=meanfreq, fill = label))+geom_density(alpha = 0.3)+
+  theme(axis.text.x = element_text(angle = 90,vjust=1), plot.title = element_text(size = 20,face = "bold", hjust = 0.5))+
+  labs(title = "Density plot of meanfreq")
+dev.off()
 
 
